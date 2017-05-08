@@ -1,0 +1,80 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back link">
+                <i class="icon icon-back"></i>
+                <span>Volver</span>
+            </a>
+        </div>
+        <div class="center sliding">Storage</div>
+        <div class="right">
+            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="about2" class="page">
+        <div class="page-content">
+            <div class="content-block">
+<!-- original -->
+
+<div class="content-block-title">Enviar datos</div>
+<div class="list-block">
+  <ul>
+    <!-- Text inputs -->
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Nombre</div>
+          <div class="item-input">
+            <input type="text" id="namesend" name="namesend" onchange="onChangeName(this.value, 'namesend')" placeholder="Nombre">
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">E-mail</div>
+          <div class="item-input">
+            <input type="email" id="mailsend" name="mailsend" onchange="onChangeName(this.value, 'mailsend')" placeholder="E-mail">
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Fecha</div>
+          <div class="item-input">
+            <input type="date" placeholder="Fecha envío" value="2017-01-01">
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Borrar</div>
+          <div class="item-input">
+            <label class="label-switch">
+              <input type="checkbox" name="borrarStorage" id="borrarStorage" onchange="ClearAfterSend('borrarStorage')">
+              <div class="checkbox"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul> 
+</div>
+<a href="javascript: sendData();" id="enviarButtom" class="button button-big active">Enviar</a>
+<p id="loader"></p> 
+<!-- fin oginigal -->                
+            </div>
+        </div>
+       
+    </div>
+</div>

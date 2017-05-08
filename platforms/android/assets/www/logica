@@ -1,0 +1,10 @@
+#stepOne --> Inicia siempre
+    #EstudiosPadre --> Se activa si es EstudiosPadre
+
+ #stepTwo --> [Docente] Inicia oculta
+    #LenYLit --> Si es true entonces modifico el botón siguiente para mostrar #stepTwoOnlyLyL
+        #stepTwoOnlyLyL --> Se activa solo si es docente de #LenYLit
+
+#stepThree --> [Padres] Inicia oculta
+
+#stepFour --> [Redes Sociales] Inicia oculta

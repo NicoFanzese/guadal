@@ -1,0 +1,18 @@
+{"2000000000":
+    [
+        {"Padres":
+            [
+                {"Nombre":"Leo","Apellido":"Condori", "Tel":1553257625},
+                {"Nombre":"Mariano","Apellido":"Rodriguez", "Tel":1553257625},
+                {"Nombre":"Fermin","Apellido":"Rojas", "Tel":1553257625}
+            ]
+        },
+        {"Docente":
+            [
+                {"Nombre":"Manzana","Cantidad":10},
+                {"Nombre":"Manzana","Cantidad":10},
+                {"Nombre":"Manzana","Cantidad":10}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,914 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back link">
+                <i class="icon icon-back"></i>
+                <span>Inicio</span>
+            </a>
+        </div>
+        <div class="center sliding">Encuesta</div>
+        <div class="right">
+            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="about" class="page">
+        <div class="page-content">
+            <div class="content-block">
+<!-- original -->
+
+<!-- DATOS PERSONALES -->
+<div id="stepOne">
+  <div class="content-block-title">Datos personales</div>
+  <div class="list-block">
+    <ul>
+      <!-- Text inputs -->
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title label">Entidad</div>
+            <div class="item-input">
+              <select id="entidad" onchange="onChangeName(this.value, 'entidad')">
+                <option></option>
+                <option>Padre</option>
+                <option>Docente</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+<div id="oculto">
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title label">Nombre</div>
+            <div class="item-input">
+              <input type="text" id="nombre" onchange="onChangeName(this.value, 'nombre')"  placeholder="Nombre">
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title label">Apellido</div>
+            <div class="item-input">
+              <input type="text" id="apellido" onchange="onChangeName(this.value, 'apellido')" placeholder="Apellido">
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title label">Teléfono</div>
+            <div class="item-input">
+              <input type="tel" id="tel" onchange="onChangeName(this.value, 'tel')" placeholder="Teléfono">
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title label">E-mail</div>
+            <div class="item-input">
+              <input type="email" id="email" onchange="onChangeName(this.value, 'email')"  placeholder="E-mail">
+            </div>
+          </div>
+        </div>
+      </li>
+  
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Edad</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select id="edad" onchange="onChangeName(this.value, 'edad')" >
+                <option>+ 20</option>
+                <option>+ 30</option>
+                <option>+ 40</option>
+                <option>+ 50</option>
+                <option>+ 60</option>
+                <option>+ 70</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+      <!-- Si es padre lo activo -->
+      <li id="EstudiosPadre">
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title label">Estudios</div>
+            <div class="item-input">
+              <select id="Estudiosfin" onchange="onChangeName(this.value, 'Estudiosfin')">
+                <option>Primario</option>
+                <option>Secundario</option>
+                <option>Terciario</option>
+                <option>Universitario</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+</div>            
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-100">
+      <a href="javascript: nextStepOne()" class="button button-big color-green active">Siguiente</a>
+    </div>    
+  </div><br>
+  <div class="col-100">
+    <a href="javascript: onClickApp()" class="button button-big color-red active">CANCELAR </a>
+  </div>
+</div>
+<!-- DATOS FIN PERSONALES -->
+
+<!-- ES DOCENTE -->
+<div id="stepTwo">
+  <div class="content-block-title">Datos institucionales</div>
+    <div class="list-block">
+      <ul>
+      <li>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title label">Institución</div>
+            <div class="item-input">
+              <input type="text" id="institucionPro" onchange="onChangeName(this.value, 'institucionPro')"  placeholder="Nombre de institución">
+            </div>
+          </div>
+        </div>
+      </li>              
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Provincia</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select id="provinciaPro" onchange="onChangeName(this.value, 'provinciaPro')" >
+                <option>CABA</option>
+                <option>GBA Norte</option>
+                <option>GBA Sur</option>
+                <option>GBA Este</option>
+                <option>GBA Oeste</option>
+                <option>Interior</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+      <div id="onlyProvincia">
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Interior</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select id="InteriorPro" onchange="onChangeName(this.value, 'InteriorPro')" >
+                <option value="Catamarca">Catamarca</option>                    
+                <option value="Chaco">Chaco</option>                    
+                <option value="Chubut">Chubut</option>                    
+                <option value="Cordoba">Cordoba</option>                    
+                <option value="Corrientes">Corrientes</option>                    
+                <option value="EntreRios">Entre Rios</option>  
+                <option value="Formosa">Formosa</option>                    
+                <option value="Jujuy">Jujuy</option>                    
+                <option value="LaPampa">La Pampa</option>                    
+                <option value="LaRioja">La Rioja</option>                    
+                <option value="Mendoza">Mendoza</option>                    
+                <option value="Misiones">Misiones</option>
+                <option value="Neuquen">Neuquén</option>                    
+                <option value="RioNegro">Rio Negro</option>                    
+                <option value="Salta">Salta</option>                    
+                <option value="SanJuan">San Juan</option>                    
+                <option value="SanLuis">San Luis</option>                    
+                <option value="SantaCruz">Santa Cruz</option>
+                <option value="SantaFe">Santa Fe</option>                    
+                <option value="SantiagoDelEstero">Santiago del Estero</option>                    
+                <option value="TierraDelFuego">Tierra del Fuego, Antártida e Isla del Atlántico Sur</option>
+                <option value="Tucuman">Tucumán</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Zona de otra Provincia</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select id="zonaProvinciaPro" onchange="onChangeName(this.value, 'zonaProvinciaPro')" >
+                <option>Norte</option>
+                <option>Noroeste</option>
+                <option>Noreste</option>
+                <option>Centro</option>
+                <option>Sur</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+      </div><!-- Fin de Solo #onlyProvincia -->
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Establecimiento</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select id="establecimientoPro" onchange="onChangeName(this.value, 'establecimientoPro')" >
+                <option>Privada</option>
+                <option>Pública</option>
+                <option>Subvencionada</option>
+                <option>Laica</option>
+                <option>Religiosa</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+      <div class="content-block-title">Cargo actual</div>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Docente" id="Docente" onchange="onClickCheckDos('Docente')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Docente</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Directivo" id="Directivo" onchange="onClickCheckDos('Directivo')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Directivo/a</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Bibliotecario" id="Bibliotecario" onchange="onClickCheckDos('Bibliotecario')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Bibliotecario/a</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Otro" id="Otro" onchange="onClickCheckDos('Otro')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Otro</div>
+          </div>
+        </label>
+      </li>
+      <div class="content-block-title">Nivel actual</div>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Inicial" id="Inicial" onchange="onClickCheckDos('Inicial')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Inicial</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="PrimerCiclo" id="PrimerCiclo" onchange="onClickCheckDos('PrimerCiclo')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Primer Ciclo</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="SegundoCiclo" id="SegundoCiclo" onchange="onClickCheckDos('SegundoCiclo')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Segundo Ciclo</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="SecunCicloBas" id="SecunCicloBas" onchange="onClickCheckDos('SecunCicloBas')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Secundaria Ciclo Básico</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="SecunCicloSup" id="SecunCicloSup" onchange="onClickCheckDos('SecunCicloSup')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Secundaria Ciclo Superior</div>
+          </div>
+        </label>
+      </li>
+      <div class="content-block-title">Área actual</div>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="CienciasSoc" id="CienciasSoc" onchange="onClickCheckDos('CienciasSoc')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Ciencias Sociales</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="CienciasNat" id="CienciasNat" onchange="onClickCheckDos('CienciasNat')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Ciencias Naturales</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Arte" id="Arte" onchange="onClickCheckDos('Arte')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Arte</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="LenYLit" id="LenYLit" onchange="onClickCheckDos('LenYLit')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Lengua y Literatura</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Otra" id="Otra" onchange="onClickCheckDos('Otra')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">otra</div>
+          </div>
+        </label>
+      </li>
+      </ul>
+    </div>
+
+  <div class="row">
+    <div class="col-50">
+      <a href="javascript: backEncuesta('stepTwo','stepOne')" class="button button-big color-gray active">Atrás</a>
+    </div>
+    <div class="col-50">
+      <a href="javascript: nextDocente()" class="button button-big color-green active">Siguiente</a>
+    </div>    
+  </div><br>
+  <div class="col-100">
+    <a href="javascript: onClickApp()" class="button button-big color-red active">CANCELAR </a>
+  </div>
+
+</div>
+<!-- ES DOCENTE -->
+
+<!-- SOLO LENGUA Y LITERATUTA -->
+<div id="stepTwoOnlyLyL">
+  <div class="content-block-title">Lengua y Literatura</div>
+    <div class="list-block">
+    <ul>
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Utiliza libro de texto</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select name="utilizaLibrosPro" id="utilizaLibrosPro" onchange="onChangeName(this.value, 'utilizaLibrosPro')" >
+                <option>Si</option>
+                <option>No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Plan lector anual?</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select id="planLectorPro" onchange="onChangeName(this.value, 'planLectorPro')" >
+                <option>1 (Uno)</option>
+                <option>2 (Dos)</option>
+                <option>3 (Tres)</option>
+                <option>4 (Cuatro)</option>
+                <option>Más</option>                
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Pertenecen a clásicos?</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select id="pertenecenAClaPro" onchange="onChangeName(this.value, 'pertenecenAClaPro')" >
+                <option>1 (Uno)</option>
+                <option>2 (Dos)</option>
+                <option>3 (Tres)</option>
+                <option>4 (Cuatro)</option>               
+              </select>
+            </div>
+          </div>
+        </div>
+      </li> 
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Contemporáneos?</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select id="contempoPro" onchange="onChangeName(this.value, 'contempoPro')" >
+                <option>1 (Uno)</option>
+                <option>2 (Dos)</option>
+                <option>3 (Tres)</option>
+                <option>4 (Cuatro)</option>               
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+      <div class="content-block-title">Sugerencias al Plan lector?</div>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Mitos" id="Mitos" onchange="onClickCheckDos('Mitos')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Mitos</div>
+          </div>
+        </label>
+      </li>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Leyendas" id="Leyendas" onchange="onClickCheckDos('Leyendas')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Leyendas</div>
+          </div>
+        </label>
+      </li>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Teatro" id="Teatro" onchange="onClickCheckDos('Teatro')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Teatro</div>
+          </div>
+        </label>
+      </li>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Poesia" id="Poesia" onchange="onClickCheckDos('Poesia')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Poesía</div>
+          </div>
+        </label>
+      </li>            
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Policiales" id="Policiales" onchange="onClickCheckDos('Policiales')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Policiales</div>
+          </div>
+        </label>
+      </li>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Aventuras" id="Aventuras" onchange="onClickCheckDos('Aventuras')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Aventuras</div>
+          </div>
+        </label>
+      </li>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Humor" id="Humor" onchange="onClickCheckDos('Humor')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Humor</div>
+          </div>
+        </label>
+      </li>
+      <li>                
+        <label class="label-checkbox item-content">
+          <input type="checkbox" name="Clasicos" id="Clasicos" onchange="onClickCheckDos('Clasicos')">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title">Clásicos</div>
+          </div>
+        </label>
+      </li>
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon f7-icons">Tecnología en el aula ?</i></div>
+          <div class="item-inner">
+            <div class="item-input">
+              <select id="usaTecnoPro" onchange="onChangeName(this.value, 'usaTecnoPro')" >
+                <option>Si</option>
+                <option>No</option>               
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-50">
+      <a href="javascript: backEncuesta('stepTwoOnlyLyL','stepTwo')" class="button button-big color-gray active">Atrás</a>
+    </div>
+    <div class="col-50">
+      <a href="javascript: nextSocialLyL()" class="button button-big color-green active">Siguiente</a>
+    </div>    
+  </div><br>
+  <div class="col-100">
+    <a href="javascript: onClickApp()" class="button button-big color-red active">CANCELAR </a>
+  </div>
+</div>
+<!-- FIN SOLO LENGUA Y LITERATUTA  -->
+
+<!-- PARA PADRES -->
+<div id="stepThree">
+  <div class="content-block-title">Para Padres</div>
+    <div class="list-block">
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-media"><i class="icon f7-icons">Hijos, edad?</i></div>
+            <div class="item-inner">
+              <div class="item-input">
+                <select id="RangoEdadPadres" onchange="onChangeName(this.value, 'RangoEdadPadres')" >
+                  <option>0-12 meses</option>
+                  <option>2-3 años</option>
+                  <option>4-5 años</option>
+                  <option>6-7 años</option>
+                  <option>8-9 años</option>
+                  <option>10-12 años</option>
+                  <option>13-15 años</option>
+                  <option>mayor de 16</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-media"><i class="icon f7-icons">Le compra libros?</i></div>
+            <div class="item-inner">
+              <div class="item-input">
+                <select id="compraLibrosPadres" onchange="onChangeName(this.value, 'compraLibrosPadres')" >
+                  <option>Si</option>
+                  <option>No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-media"><i class="icon f7-icons">Lee extracurricular?</i></div>
+            <div class="item-inner">
+              <div class="item-input">
+                <select id="leeLibExtPadres" onchange="onChangeName(this.value, 'leeLibExtPadres')" >
+                  <option>Ninguno</option>
+                  <option>Entre 2 y 3</option>
+                  <option>Entre 4 y 6</option>
+                  <option>Más de 6</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </li>
+        <div class="content-block-title">Compra en?</div>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="Librerias" id="Librerias" onchange="onClickCheckDos('Librerias')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Librerías</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="Supermercado" id="Supermercado" onchange="onClickCheckDos('Supermercado')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Supermercado</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="OnLine" id="OnLine" onchange="onClickCheckDos('OnLine')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">On Line</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="OtrosPad" id="OtrosPad" onchange="onClickCheckDos('OtrosPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Otros</div>
+            </div>
+          </label>
+        </li>
+        <div class="content-block-title">Hijos, solicitan libros de</div>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="ActPad" id="ActPad" onchange="onClickCheckDos('ActPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Actividades</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="PintarPad" id="PintarPad" onchange="onClickCheckDos('PintarPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Para pintar</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="CocinaPad" id="CocinaPad" onchange="onClickCheckDos('CocinaPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">De cocina</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="InteractivosPad" id="InteractivosPad" onchange="onClickCheckDos('InteractivosPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Interactivos</div>
+            </div>
+          </label>
+        </li>        
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="PerConPad" id="PerConPad" onchange="onClickCheckDos('PerConPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Personajes conocidos</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="CuentosPad" id="CuentosPad" onchange="onClickCheckDos('CuentosPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">De cuentos</div>
+            </div>
+          </label>
+        </li>        
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="IlustradorPad" id="IlustradorPad" onchange="onClickCheckDos('IlustradorPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Ilustrados</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="ParaAdolPad" id="ParaAdolPad" onchange="onClickCheckDos('ParaAdolPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Para adolescentes</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="SagasPad" id="SagasPad" onchange="onClickCheckDos('SagasPad')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Sagas</div>
+            </div>
+          </label>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">Otro</div>
+              <div class="item-input">
+                <input type="text" id="otroGeneroPro" onchange="onChangeName(this.value, 'otroGeneroPro')"  placeholder="Otro">
+              </div>
+            </div>
+          </div>
+        </li>                       
+        <li>
+          <div class="item-content">
+            <div class="item-media"><i class="icon f7-icons">Regala libros?</i></div>
+            <div class="item-inner">
+              <div class="item-input">
+                <select id="regalaPadres" onchange="onChangeName(this.value, 'regalaPadres')" >
+                  <option>Si</option>
+                  <option>No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  <div class="row">
+    <div class="col-50">
+      <a href="javascript: backEncuesta('stepThree','stepOne')" class="button button-big color-gray active">Atrás</a>
+    </div>
+    <div class="col-50">
+      <a href="javascript: nextSocial()" class="button button-big color-green active">Siguiente</a>
+    </div>    
+  </div><br>
+  <div class="col-100">
+    <a href="javascript: onClickApp()" class="button button-big color-red active">CANCELAR </a>
+  </div>
+
+</div>
+<!-- FIN PARA PADRES -->
+
+<!-- REDES SOCIALES -->
+<div id="stepFour">
+  <div class="content-block-title">Redes Sociales</div>
+    <div class="list-block">
+      <ul>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="Facebook" id="Facebook" onchange="onClickCheckDos('Facebook')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Facebook</div>
+            </div>
+          </label>
+        </li>
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="Instagram" id="Instagram" onchange="onClickCheckDos('Instagram')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Instagram</div>
+            </div>
+          </label>
+        </li> 
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="Twitter" id="Twitter" onchange="onClickCheckDos('Twitter')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Twitter</div>
+            </div>
+          </label>
+        </li> 
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="Pinterest" id="Pinterest" onchange="onClickCheckDos('Pinterest')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">Pinterest</div>
+            </div>
+          </label>
+        </li> 
+        <li>                
+          <label class="label-checkbox item-content">
+            <input type="checkbox" name="YouTube" id="YouTube" onchange="onClickCheckDos('YouTube')">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">YouTube</div>
+            </div>
+          </label>
+        </li>                                         
+      </ul>
+    </div>
+
+  <div class="row">
+    <div class="col-50">
+      <a href="javascript: backEncuesta('A','B')" class="button button-big color-gray active">Atrás</a>
+    </div>
+    <div class="col-50">                    <!--button button-big button-round active-->
+      <a href="javascript: finish()" class="button button-big button-round active">¡Finalizar!</a>
+    </div>    
+  </div><br>
+  <div class="col-100">
+    <a href="javascript: onClickApp()" class="button button-big color-red active">CANCELAR </a>
+  </div>
+</div>
+<!-- FIN REDES SOCIALES -->
+
+<!-- fin oginigal -->                
+            </div>
+        </div>
+       
+    </div>
+</div>
